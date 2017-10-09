@@ -1,0 +1,22 @@
+(1)基于RASE方法的规范分解：个人觉得A这一项有点多余，在R中已经可以体现出来了
+example: 
+1)Clear height of doors shall be at least 2.10m;
+Requirement: (topic) door, (property) height, (comparator) >=, (value) 2.10, (unit) m;
+Selection: (topic) -, (property) -, (comprator) -, (value) -, (unit) -;
+Exception: (topic) -, (property) -, (compartor) -, (value) -, (unit) -;
+2)Clear width of entrance doors of independent unit shall be at least 1.00m; (该规范有两条选择条件=》对规范的主体有两个约束)
+Requirement: (topic) door, (property) width, (comprator) >=,
+(value) 1.00, (unit) m;
+Selection: (topic) door, (property) type, (comprator) =,
+(value) entrance, (unit) -; (topic) door, (property) contained, (comparator) =, (value) independent unit, (unit) -;
+3)Roofs in general must remain within 33% sloping height, except duplex house
+Requirement: (topic) roof, (property) pitch, (comprator) <=, (value) 33, (unit) %;
+Selection: (topic) -, (property) -, (comparator) -, (value) -, (unit) -;
+Exception: (topic) building, (property) type, (comparator) =, (value) duplex house, (unit) -;
+4)设置电梯的民用建筑的公共交通部位应设无障碍设施
+=》 有电梯的民用建筑能否再次进行拆分，因为原本这条规则的主体是公共交通部位，如果进行拆分，主体会发生改变
+Requirement: (topic) 公共交通部位, (property) #无障碍设施, (comprator) >=, (value) 1, (unit) -;
+Selection: (topic) 公共交通部位, (property) 归属, (comprator) =, (value) 有电梯的民用建筑, (unit) -; 
+5）残疾人、老年人专用的建筑物应设置无障碍设施
+Requirement: (topic) 建筑物, (property) #无障碍设施, (comparator) >=, (value) 1, (unit) -;
+Selection: (topic) 建筑物, (property) 服务对象, (comprator) =, (value) {残疾人、老年人}, (unit) -;
