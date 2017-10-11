@@ -1,0 +1,17 @@
+（1）对规范的处理
+the thickness of concrete floor slabs supported directly on the ground shall not be less than 31/2 inches.
+1)对文本进行标记（预先先整理好一系列的本体词汇）
+the thickness(属于本体词汇quantity) of concrete floor slabs(属于本体词汇building element) supported directly on the ground shall('MD'情态动词) not(Negation否定词) be(VB) less than (Comparative relation 关系比较) 31(CD, 数字) / (slash) 2(CD, 数字) inches(Unit, 单位)
+2)根据抽取规则提取内容
+规则1：“MD + Negation + VB + comparative relation” =》 将Negation 和 comparative relation提取出来 =》 not less than
+规则2：本体词汇building element 或者 room 或者space抽取为subject（检查主体） => concrete floor slab
+规则3：本体词汇quantity提取为attribute（检查主体的检查属性） => thickness
+规则4："CD / CD unit" 分别提取出value和unit => 31/2;inches
+
+## 各人感觉这一步可以跟RASE方法结合
+## Clear width of entrance doors of independent unit shall be at least 1.00m;（这条规范来自RASE方法论文）
+## Clear width(quantity本体) of entrance doors(building element本体) of independent unit(building element 本体) shall(MD 情态动词) be(VB) at least(d副词) 1.00(CD) m(unit)
+## 抽取attribute => clear width
+## 抽取subject => entrance doors; independent unit => 多于一个，存在问题，需要唯一确定 => "本体 + OF + 本体" 规则确定entrance doors为subject，后者为RASE中的selection主体
+##  VB + d => 比较关系 at least
+## CD + unit => 1.00m
