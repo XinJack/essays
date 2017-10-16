@@ -1,0 +1,8 @@
+(1)新加坡CORENET系统
+	前身是1995年的“BP-Expert”系统，该系统的目的是检查2D图纸。（A.L. Teo, T.F. Cheng, Building smart — a strategy for implementing BIM solution in Singapore, Synth. J. 5 (2006) 117–124）
+	2000年被作为CORENET（Construction and Real Estate NETwork）项目一部分的e-PlanCheck系统所替代，CORENET项目由新加坡国家发展部（Singapore Ministry of National Development）资助，由Real Estate Network加以实施。该项目的目标是提供一个基于网络的建设方案审查电子提交系统，提交审查的资料需同时包含2D图纸以及IFC文件。
+	由于IFC文件更多的关注建筑几何信息，因而有许多审查需要的信息IFC文件无法提供，为此，CORENET依赖了FORNAX系统。FORNAX系统一开始是基于现有的Jotne EDModelChecker，但是后来发展演变成一个规则检查引擎。FORNAX本质上是一个C++对象库，其中的每个对象都包含了新加坡规范的相关属性以及施加在该对象上的规范条文。FORNAX在设计上预留了可扩展的接口，因此CORENET ePlanCheck系统也被作为挪威和纽约试点项目的基础。ePlanCheck的缺点在于确保数据质量（例如模型中的空间space并没有以墙或门作为边界；空间space超过屋面高度等等）以及检查不同实施阶段项目的困难上。
+(2)挪威Statsbygg
+	挪威效仿CORENET的ePlanCheck系统发展了自己的一套ByggSok系统，该政府系统由一个信息系统，一个建筑应用的电子提交系统以及一个空间建议系统组成。
+	ByggSok系统为了能够将基于IFC标准的BIM模型应用到项目的全生命周期中曾试验过多套可行的系统方案。在HITOS试点项目中，规范审查被用于可达性设计当中。在该项目中，建筑模型信息以IFC形式存储在EDM模型服务器当中，可达性规范则被参数化并和相应的建筑对象相映射，然后使用Solibri模型检查器的约束集管理器（Constraint Set Manager）执行可达性规范审查。
+	这套Statsbygg Solibri系统同样存在着一些缺点，一是其不支持模型数据的增强或者IFC格式的输出因此无法审查IFC标准不支持的建筑属性，二是Solibri的约束集管理器底层是由java语言实现的同时具有一些可用的内建规则，但是新的规则必须重新进行编写。
